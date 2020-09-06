@@ -1,7 +1,7 @@
 # Rock-Paper-Scissors
 Python Text Game Rock Paper Scissors
 
-# Intoduction
+# Introduction
 
 You can play 5 rounds of this games selecting two diferent players:
 * Human Player (user player)
