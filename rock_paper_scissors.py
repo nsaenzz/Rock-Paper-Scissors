@@ -6,6 +6,7 @@ import randomPlayer
 import cyclePlayer
 import reflectPlayer
 import rockPlayer
+import oppositePlayer
 
 """This program plays a game of Rock, Paper,
 Scissors between two selected Players (User or computer),
@@ -16,24 +17,28 @@ def selectPlater():
     while True:
         print("1 - Human Player (user player)")
         print("2 - Random Player (plays random between rock, paper, scissors)")
-        print("3 - Cycle Player (plays last round oppsite move)")
+        print("3 - Oppsite Player (plays last round oppsite move)")
         print("4 - Reflect Playe (plays opponent last move")
-        print("5 - Rock Player (always plays rock)")
-        print("6 - Please select for me (Computer select a non human "
+        print("5 - Cycle Player (always plays rock)")
+        print("6 - Rock Player (always plays rock)")
+        print("7 - Please select for me (Computer select a non human "
               "Player from the list above)")
-        player = input("Please select a player. Type 1, 2, 3, 4, 5, or 6: \n")
-        if player == "6":
-            player = random.choice(["2", "3", "4", "5"])
+        player = input("Please select a player. Type 1, 2, 3, 4, 5, "
+                       "6, or 7: \n")
+        if player == "7":
+            player = random.choice(["2", "3", "4", "5", "6"])
 
         if player == "1":
             return humanPlayer.HumanPlayer()
         elif player == "2":
             return randomPlayer.RandomPlayer()
         elif player == "3":
-            return cyclePlayer.CyclePlayer()
+            return oppositePlayer.OppositePlayer()
         elif player == "4":
             return reflectPlayer.ReflectPlayer()
         elif player == "5":
+            return cyclePlayer.CyclePlayer()
+        elif player == "6":
             return rockPlayer.RockPlayer()
 
 

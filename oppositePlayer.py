@@ -6,16 +6,16 @@ and cycles through the different moves.
 If it is the first round it will return a random move"""
 
 
-class CyclePlayer(player.Player):
+class OppositePlayer(player.Player):
     def move(self):
-        if self.my_move == "":
+        if self.their_move == "":
             return super().randomChoice()
-        elif self.my_move == "rock":
+        elif self.their_move == "rock":
             return 'paper'
-        elif self.my_move == "paper":
+        elif self.their_move == "paper":
             return 'scissors'
         else:
             return 'rock'
 
     def typeOfPlayer(self):
-        return "Cycle Player"
+        return "Opposite Player"
